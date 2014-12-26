@@ -1,0 +1,12 @@
+﻿@foreach (ModelState modelState in ViewData.ModelState.Values)
+{
+    if (modelState.Errors.Count > 0)
+    { 
+        <div class="error_message">
+        @foreach (ModelError error in modelState.Errors)
+        {
+            @error.ErrorMessage
+        }
+        </div>    
+    }
+}

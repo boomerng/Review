@@ -1,0 +1,43 @@
+﻿/************ Display **************/
+.Show
+{
+    display:inline-block !important;
+}
+.Hide
+{
+    display:none !important;
+}
+.DisplayInline
+{
+    display:inline-block;
+}
+/************ Float **************/
+.FloatLeft
+{
+    float:left;
+}
+.FloatRight
+{
+    float:right;
+}
+/*********** Cursor *************/
+.CursorPointer
+{
+    cursor:pointer;
+}
+/*********** Align **************/
+.AlignRight
+{
+    text-align:right;
+}
+.AlignCenter
+{
+    text-align:center;
+}
+/*********** Custom ************/
+div.InBtwnForm
+{
+    border:1px solid #A4A4A4;
+    width:inherit;
+    padding: 5px 0px 5px 10px;
+}

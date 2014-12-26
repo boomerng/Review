@@ -1,0 +1,27 @@
+﻿@model MyR.Models.HomeModel
+
+@section css {  
+    <link href="@Url.Content("~/Content/Home/Home.css")" rel="Stylesheet" type="text/css" />
+}
+
+<div class="LeftSide">
+    <ol class="HomeItems">
+        <li>
+            <img src="@Model.ProfilePhoto.ProfilePhotoPath" class="profileImage" alt="Profile Image" />
+        </li>
+        <li>
+            @Html.ActionLink("Write a new review", "Review", "Review")
+        </li>
+    </ol>
+
+    @Html.Partial("_CategoryPartial", Model.ProfileCategories)
+
+    @Html.Partial("_FriendPartial")
+</div>
+
+<div class="RightSide">
+    @foreach (var review in Model.ProfileReviewList)
+    { 
+        @Html.Partial("_ReviewPartial", review)
+    }
+</div>

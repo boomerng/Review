@@ -1,0 +1,27 @@
+﻿div.LeftSide
+{
+    float:left;
+    margin-left:0;
+}
+
+div.RightSide
+{
+    text-align:center;
+    margin-right:0;    
+}
+
+.HomeItems
+{
+    list-style-type:none;
+    clear:both;
+    display:block;
+}
+.LeftItems > li
+{
+    margin-bottom:15px;
+    clear:none;
+}
+.LeftItems > li > div
+{
+    border: 1px solid #D3D6DB;
+}

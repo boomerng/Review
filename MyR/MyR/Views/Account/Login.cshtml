@@ -1,0 +1,59 @@
+﻿@model MyR.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+@section css {  
+    <link href="@Url.Content("~/Content/Account/Login.css")" rel="Stylesheet" type="text/css" />
+}
+
+<section id="loginForm">
+    <h3>Use a local account to log in</h3>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Log in Form</legend>
+            <ol>
+                <li>
+                    @Html.LabelFor(m => m.UserEmail)
+                    @Html.TextBoxFor(m => m.UserEmail)
+                    @Html.ValidationMessageFor(m => m.UserEmail)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                </li>
+                <li>
+                    <label></label>
+                    @Html.ActionLink("Forgot your password?", "PasswordRecovery")
+                </li>
+                <li class="buttons">
+                    <input type="submit" value="Log in" />
+                </li>
+            </ol>
+        </fieldset>
+        <p>
+            Click on "@Html.ActionLink("Register", "Register")" if you don't have an account.
+        </p>
+    }
+</section>
+
+<section class="social" id="socialLoginForm">
+    <h3>Use another service to log in</h3>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

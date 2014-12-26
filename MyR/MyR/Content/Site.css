@@ -1,0 +1,121 @@
+﻿/* headers */
+h1, h2, h3,
+h4, h5, h6 {
+    color: #464545;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* anchor tag */
+a 
+{
+    color: #333;
+    text-decoration:none;
+}
+
+a:link, a:visited, a:active 
+{
+    color: #333;
+}
+a:hover 
+{
+    text-decoration:underline;
+    color: #333;
+}
+/* ul */
+ul 
+{
+    list-style-type:none;
+}
+            
+/* page titles */
+hgroup.title {
+    margin-bottom: 10px;
+}
+
+hgroup.title h1, hgroup.title h3 {
+    display: inline;
+}
+
+hgroup.title h2 {
+    font-weight: normal;
+    margin-left: 3px;
+}
+
+/* buttons */
+input[type="submit"], input[type="button"], button, .button
+{
+    display:inline-block;
+    text-decoration:none;
+    line-height:23px;
+    height:24px;
+    margin:0;
+    padding: 0 10px 1px;
+    border-width:1px;
+    cursor:pointer;
+    background-color: #BDBDBD;
+}
+.button:hover
+{
+    text-decoration:none;
+}
+/* validation */
+span.field-validation-error
+{
+    color:#ce1919;
+}
+/* message */
+.notice_message
+{
+    color: Black;
+    background: #FFFFE1 url("/Images/Site/information.png") no-repeat 8px 8px;
+    font-family: Tahoma,Verdana,Arial,Helvetica;
+	font-size: 10pt;
+	font-weight: bold;
+    padding: 8px 8px 8px 32px; 
+}
+.warning_message
+{
+    color: Black;
+    background: #FFFFE1 url("/Images/Site/cs_log/warning.gif") no-repeat 8px 8px;
+    font-family: Tahoma,Verdana,Arial,Helvetica;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 8px 8px 8px 32px;
+}
+
+.error_message
+{
+    color: Black;
+    background: #FFFFE1 url("/Images/Site/error.gif") no-repeat 8px 8px;
+    font-family: Tahoma,Verdana,Arial,Helvetica;
+    font-size: 10pt;
+    font-weight: bold;
+    padding: 8px 8px 8px 32px;
+}
+/* label */
+label.radioLabel
+{
+    display:inline-block;
+    width: auto !important;
+}

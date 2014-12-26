@@ -1,0 +1,7 @@
+1. App_Start: BundleConfig, RouteConfig
+2. Classes: Constants, PasswordGenerator
+3. Content: All css files. General, Shared, Categorized by Controller/Views
+4. Filters: Custom Filter
+5. Models: DBExtensions, Models
+6. Scripts: Categorized by Controller/Views
+7. Unit test

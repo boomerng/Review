@@ -1,0 +1,101 @@
+﻿@model MyR.Models.ManageModel
+
+@{
+    ViewBag.Title = "My Profile";
+}
+
+@section css {  
+    <link href="@Url.Content("~/Content/Account/Manage.css")" rel="Stylesheet" type="text/css" />
+}
+@if (ViewBag.Message != null)
+{
+    <div class="@ViewBag.MessageCss">
+        @ViewBag.Message
+    </div> 
+}
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+@using (Html.BeginForm("Manage", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+    @Html.AntiForgeryToken()
+<div class="FloatLeft width20">
+    @if (!string.IsNullOrEmpty(Model.RUser.PhotoPath))
+    {
+        <img src="@Model.RUser.PhotoPath" class="profileImage" alt="Profile Image" />
+    }
+    else
+    {
+         <img src="@MyR.Constants.SystemConstants.DefaultProfilePhotoPath" class="profileImage" alt="Profile Image" />
+    }
+</div>
+<div class="FloatLeft width80">
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.RUser.PhotoPath)
+                <input type="file" id="profile_file" name="profile_file" />
+                @Html.HiddenFor(m => m.RUser.PhotoPath)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.RUserEmail)
+                @Html.DisplayFor(m => m.RUser.RUserEmail)
+                @Html.HiddenFor(m => m.RUser.RUserEmail)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.FirstName)
+                @Html.TextBoxFor(m => m.RUser.FirstName)
+                @Html.ValidationMessageFor(m => m.RUser.FirstName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.LastName)
+                @Html.TextBoxFor(m => m.RUser.LastName)
+                @Html.ValidationMessageFor(m => m.RUser.LastName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.Gender)
+                @foreach (SelectListItem itm in Model.GenerList.Items)
+                {
+                    @Html.RadioButtonFor(m => m.RUser.Gender, itm.Value);
+                    @Html.Label(itm.Value, itm.Text, new { @class = "radioLabel" });
+                }
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.Phone)
+                @Html.TextBoxFor(m => m.RUser.Phone)
+                @Html.ValidationMessageFor(m => m.RUser.Phone)
+                @Html.Label("nothing", "xxx-xxx-xxxx", new { @class = "description" })
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.Question)
+                @Html.TextBoxFor(m => m.RUser.Question)
+                @Html.ValidationMessageFor(m => m.RUser.Question)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.RUser.Answer)
+                @Html.TextBoxFor(m => m.RUser.Answer)
+                @Html.ValidationMessageFor(m => m.RUser.Answer)
+            </li>
+            <li>
+                <label></label>
+                @Html.ActionLink((string)ViewBag.ChangePasswordText, "ChangePassword")
+            </li>
+            <li class="buttons">
+                <input type="submit" value="Update" />        
+            </li>
+        </ol>
+    </fieldset>
+</div>
+}
+<hr />
+<section id="externalLogins">
+    @Html.Action("RemoveExternalLogins")
+
+    <h3>Add external login, so you can login with the external account as well.</h3>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

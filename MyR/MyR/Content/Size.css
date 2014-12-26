@@ -1,0 +1,56 @@
+﻿.XXXXS
+{
+    width:16px !important;
+}
+.XXXS
+{
+    width:24px !important;
+}
+.XXS
+{
+    width:32px !important;
+}
+.XS
+{
+    width:48px !important;
+}
+.S
+{
+    width:56px !important;
+}
+.MS
+{
+    width:64px !important;
+}
+.M
+{
+    width:72px !important;
+}
+.ML
+{
+    width:84px !important;
+}
+.L
+{
+    width:96px !important;
+}
+.XL
+{
+    width:128px !important;
+}
+.XXL
+{
+    width:256px !important;
+}
+.XXXL
+{
+    width:512px !important;
+}
+.XXXXL
+{
+    width:980px !important;
+}
+
+.LabelWidth {
+    width:150px !important;
+}

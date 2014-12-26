@@ -1,0 +1,1 @@
+http://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.resetpassword%28v=vs.111%29.aspx

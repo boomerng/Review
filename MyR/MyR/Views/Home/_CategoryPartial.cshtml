@@ -1,0 +1,14 @@
+﻿@model MyR.Models.ProfileCategoriesModel
+
+Categories
+<ul>
+    <li>
+        Show All
+    </li>
+    @foreach (var category in Model.Categories)
+    { 
+        <li>
+            @category.CategoryName
+        </li>
+    }
+</ul>

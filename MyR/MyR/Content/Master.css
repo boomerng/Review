@@ -1,0 +1,112 @@
+﻿html {
+    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+div#header
+{
+    overflow: hidden;
+    height:110px;
+    background: url("../Images/Master/bg-header.png") repeat-x 0;
+}
+div#header div.title
+{
+    width:980px;
+    margin:0px auto;
+    padding:0 0 0 3px;
+}
+
+div#header div.title img.logo
+{
+    height:48px;
+    width:48px !important;
+    margin-right:5px;
+    margin-top:20px;
+    padding-left:5px;
+    float:left;
+}
+
+div#header span.site-title
+{
+    float:left;
+    font:normal normal normal 48px/48px Lobster,Georgia,Times,'Bookman Old Style',serif;
+    font-family: Georgia;
+    font-style:italic;
+    margin:20px 0 0 0;
+}
+
+div#header span.site-title a
+{
+    color:#FFF;
+}
+
+div#header span.site-title a:hover
+{
+    color:#FFF;
+    text-decoration:none;
+}
+
+/*Login Partial*/
+ul#login-links
+{
+    
+}
+ul#login-links li
+{
+    float:left;
+    padding-right:5px;
+    color:#FFF;
+}
+ul#login-links li a
+{
+    color:#FFF;
+    font-style:italic;
+}
+ul#login-links li a:hover
+{
+    color:#FFF;
+    font-style:italic;
+}
+
+div.AuthenticatedMessage
+{
+    margin-top:16px;
+    color:#FFF;
+}
+div.AuthenticatedMessage a
+{
+    color:#FFF;
+    font-style:italic;
+}
+div.AuthenticatedMessage a:hover
+{
+    color:#FFF;
+    font-style:italic;
+}
+div.AuthenticatedMessage form
+{
+    float:right;
+}
+
+
+/*Body*/
+div#body {
+    background-color: #fff;
+    color: #333;
+    font-size: .90em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    padding: 20px;
+    margin:0 auto;
+    margin-top:20px;
+    max-width:980px !important;
+}
+.clear-fix:after 
+{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}

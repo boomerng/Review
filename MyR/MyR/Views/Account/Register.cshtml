@@ -1,0 +1,52 @@
+﻿@model MyR.Models.RegisterModel
+@{
+    ViewBag.Title = "Registration";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+<div class="notice_message">
+    Password Requirement: Password has to be an alpha-numeric string with minimum length of @MyR.Constants.SystemConstants.PasswordLength.ToString().
+</div>
+@using (Html.BeginForm())
+{ 
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserEmail)
+                @Html.TextBoxFor(m => m.UserEmail)
+                @Html.ValidationMessageFor(m=>m.UserEmail)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Question)
+                @Html.TextBoxFor(m => m.Question)
+                @Html.ValidationMessageFor(m => m.Question)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Answer)
+                @Html.TextBoxFor(m => m.Answer)
+                @Html.ValidationMessageFor(m => m.Answer)
+            </li>
+            <li class="buttons">
+                <input type="submit" value="Register" />        
+            </li>
+        </ol>
+    </fieldset>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

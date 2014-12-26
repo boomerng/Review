@@ -1,0 +1,44 @@
+﻿.profileImage
+{
+    max-width:200px !important;
+    max-height:600px !important;
+}
+
+/* forms */
+fieldset {
+    border: none;
+    margin: 0 auto;
+    padding: 0;
+    width: 96%;
+}
+    fieldset legend {
+        display: none;
+    }
+    fieldset ol {
+        padding: 0;
+        list-style: none;
+    }
+        fieldset ol li {
+            padding-bottom:5px;
+        }
+            fieldset ol li label {
+                display:inline-block;
+                width: 150px !important;
+                text-align:right;
+                font-weight:600;
+                vertical-align:top;
+            }
+            fieldset ol li label.description {
+                display:inline-block;
+                width: auto !important;
+                font-weight:normal;
+            }
+            fieldset ol li input[type="text"], input[type="password"] {
+                display:inline-block;
+                width: 200px !important;
+                text-align:left;
+            }
+            fieldset ol li.buttons
+            {
+                text-align:right;
+            }

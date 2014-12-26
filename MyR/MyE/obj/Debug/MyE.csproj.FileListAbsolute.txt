@@ -1,0 +1,8 @@
+D:\Users\Roger\Dropbox\Codes\MyR\MyE\bin\Debug\MyE.dll
+D:\Users\Roger\Dropbox\Codes\MyR\MyE\bin\Debug\MyE.pdb
+D:\Users\Roger\Dropbox\Codes\MyR\MyE\obj\Debug\MyE.dll
+D:\Users\Roger\Dropbox\Codes\MyR\MyE\obj\Debug\MyE.pdb
+C:\Users\roger.chen\Dropbox\Codes\MyR\MyE\bin\Debug\MyE.dll
+C:\Users\roger.chen\Dropbox\Codes\MyR\MyE\bin\Debug\MyE.pdb
+C:\Users\roger.chen\Dropbox\Codes\MyR\MyE\obj\Debug\MyE.dll
+C:\Users\roger.chen\Dropbox\Codes\MyR\MyE\obj\Debug\MyE.pdb

@@ -1,0 +1,69 @@
+﻿@model MyR.Models.ReviewModel
+
+@section css {  
+    <link href="@Url.Content("~/Content/Review/ReivewAction.css")" rel="Stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/OtherSources/rateit.css")" rel="Stylesheet" type="text/css" />
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+@Html.Partial("ModelStateErrorPartial")
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.Review.RReviewId)
+     <fieldset>
+        <legend>Review Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.Review.RCategoryId)
+                @Html.DropDownListFor(m => m.Review.RCategoryId, Model.Categories, "-- Add my own --")
+                @Html.HiddenFor(m => m.NewCategoryName)
+            </li>
+            <li class="@ViewBag.NewCategoryClass" id="liAddNewCategory">
+                @Html.Label("New category name")
+                @Html.TextBox("tbCategoryName")&nbsp;
+                <input type="button" id="btnAddCategory" value="Add" />&nbsp;
+                <input type="button" id="btnCancelCategory" value="Cancel" class="@ViewBag.ShowCategoryCancel" />
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Review.ItemName)
+                @Html.TextBoxFor(m => m.Review.ItemName)
+                @Html.ValidationMessageFor(m => m.Review.ItemName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Review.BrandName)
+                @Html.TextBoxFor(m => m.Review.BrandName)
+                @Html.ValidationMessageFor(m => m.Review.BrandName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Review.Rating)
+                <div class="rateit"></div>
+                @Html.HiddenFor(m => m.Review.Rating)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Review.Title)
+                @Html.TextBoxFor(m => m.Review.Title)
+                @Html.ValidationMessageFor(m => m.Review.Title)
+            </li>
+            <li>
+                <span class="LabelWidth DisplayInline">&nbsp;</span>
+                @Html.ValidationMessageFor(m => m.Review.BodyContent)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Review.BodyContent)
+                @Html.TextAreaFor(m => m.Review.BodyContent, new { @class = "ContentSize" })
+                
+            </li>
+            <li class="buttons">
+                <input type="submit" name="submitButton" value="@ViewBag.SubmitButton" />&nbsp;
+                <input type="submit" name="submitButton" value="Cancel" />
+            </li>
+        </ol>
+    </fieldset>
+}
+
+@section scripts {
+    @Scripts.Render("~/Scripts/Review/ReviewAction.js")
+    @Scripts.Render("~/Scripts/OtherSources/jquery.rateit.min.js")
+}
